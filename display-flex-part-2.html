@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Testing</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .bg-grey{
+            background-color: grey;
+        }
+        .bg-lightblue{
+            background-color: lightskyblue;
+        }
+        .bg-orange{
+            background-color: orangered;
+        }
+
+        .one{
+            height: 50vh;
+            display: flex;
+            background-color: #f4f4f4;
+            /* flex-grow: 1; */
+        }
+        .part{
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .part.right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .two{
+            width: 990px;
+            display: flex;
+            margin: auto;
+            margin-top: -70px;
+            justify-content: space-between;
+        }
+        .card{
+            margin: 0;
+            width: 300px;
+            padding: 20px 15px;
+            background-color: #f4f4f4;
+            box-shadow: 0 0 25px #00000020;
+            border-radius: 10px;
+        }
+
+        .third{
+            width: 990px;
+            /* height: 50vh; */
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .third-part{
+            width: 500px;
+            text-align: center;
+        }
+        
+        .four{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .four-part{
+            width: 450px;
+            padding: 0 20px;
+        }
+
+        .five{
+            display: flex;
+            background-color: #ffffff;
+            flex-direction: row-reverse;
+        }
+        .five-part{
+            text-align: right;
+        }
+        
+        .photo{
+            width: 450px;
+            height: 300px;
+        }
+        @media screen and  (max-width:480px) {
+            .one,.two,.third,.four,.five{
+                flex-direction: column;
+            }
+            .one{
+                width: 100%;
+            }
+            .two{
+                width: 100%;
+                margin-top: 30px;
+                align-items: center;
+            }
+            .third{
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+            .photo{
+                width: 100%;
+            }
+            .four-part,.five-part{
+                text-align: center;
+            }
+            section,div{
+                max-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="one">
+        <div class="part left bg-grey"></div>
+        <div class="part right bg-lightblue">
+            <div class="" style="width: 300px;">
+                <h1>This is Title</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quas accusamus reiciendis fugiat temporibus expedita iure et autem ratione dolorem odit optio quo fuga incidunt consequatur, ullam laboriosam culpa eius!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="two">
+        <div class="card">
+            <h1>This is One</h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo modi ipsum quia optio ratione, officia ipsa sapiente mollitia quibusdam accusantium adipisci iusto non tempora eos temporibus fugit, dignissimos similique quas!
+            </p>
+        </div>
+        <div class="card">
+            <h1>This is Two</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magnam, asperiores facere sint nemo aperiam deserunt, totam sequi itaque dolorum tenetur quasi saepe eos laboriosam cupiditate excepturi nulla quod nisi?
+            </p>
+        </div>
+        <div class="card">
+            <h1>This is Three</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi aliquam maxime quos, expedita sint mollitia earum dolorem. Vel exercitationem deserunt at. Expedita, voluptas? Similique inventore eaque nostrum ab, labore distinctio!</p>
+        </div>
+    </section>
+
+    <section class="third">
+            <div class="third-part">
+                <h1>This is Nature</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, ex minus beatae similique nam nulla dignissimos corrupti quidem eum! Iusto error consectetur ab qui dolorem quo illum nesciunt eum est.</p>
+            </div>
+        
+    </section>
+
+    <section class="four">
+        <img src="https://bit.ly/34ybsym" alt="nature-photo" class="photo">
+        <div class="four-part">
+            <h1>This is Nature</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi accusantium nihil fugit magnam aliquam suscipit, corporis illum corrupti reiciendis recusandae voluptas totam quibusdam vitae placeat omnis blanditiis officia nam repellendus?</p>
+        </div>
+    </section>
+
+    <section class="four five">
+        <img src="https://bit.ly/3oJzlJY"  alt="nature-photo" class="photo">
+        <div class="four-part five-part">
+            <h1>This is Nature</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi accusantium nihil fugit magnam aliquam suscipit, corporis illum corrupti reiciendis recusandae voluptas totam quibusdam vitae placeat omnis blanditiis officia nam repellendus?</p>
+        </div>
+    </section>
+</body>
+</html>
