@@ -6,23 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css Gradient Blur Particle</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
         *{
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
+        html{
+            scroll-behavior: smooth;
+        }
         body{
-            
+            font-family: 'Redressed', cursive;
         }
         .home{
-            background-image: linear-gradient(to right top, #003052,#005378,#00789F,#00A0C8,#3CC9F3);
             height: 100vh;
+            background-image: url(https://bit.ly/3oYriZP);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            position: relative;
+            z-index: -2;
+        }
+        .home-content{
+            width: 350px;
+            margin-right: 100px;
+        }
+
+        .home::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #E6DADA;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #274046, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #274046, #E6DADA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            position: absolute;
+            opacity: 0.7;
+            backdrop-filter: blur(15px);
+            z-index: -1;
+        }
+        .home-content-title{
+            color: aquamarine;
+            font-size: 30px;
+        }
+        .home-content-para{
+            color: #5f5e5e;
+            font-size: 25px;
+        }
+        .up{
+            width: 50px;
+            height: 50px;
+            background: #f4f4f4;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .up-icon{
+            width: 20px;
         }
     </style>
 </head>
 <body>
-    <section class="home">
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1 class="home-content-title">Nature Photo</h1>
+            <p class="home-content-para">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptatibus libero culpa quos dolore dolores soluta voluptate magni aliquid corrupti minima, hic quidem voluptates expedita ratione omnis quisquam laboriosam quo.
+            </p>
+        </div>
+    </section>
+
+    <section style="height: 100vh;">
 
     </section>
+
+    <section style="height: 100vh;">
+
+    </section>
+    <div class="up">
+        <a href="#home">
+        <svg class="up-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"/></svg>
+        </a>
+    </div>
 </body>
 </html>
