@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Property</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Gideon Roman', cursive;
+        }
+        body{
+            padding: 30px;
+        }
+        .heading{
+            color: aqua;
+            margin-bottom: 30px;
+        }
+        .paragraph{
+            color: #333333;
+            column-count: 3;
+            column-width: 300px;
+            column-rule: 1px solid aqua;
+            line-height: 2;
+            column-gap: 50px;
+        }
+        .paragraph p{
+            margin-bottom: 30px;
+
+        }
+        .full{
+            column-span: all;
+        }
+        @media screen and (max-width:480px) {
+            body{
+                padding: 25px;
+            }
+            .heading{
+                margin-bottom: 10px;
+            }
+            .full{
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Css Column Property</h1>
+    <div class="paragraph">
+        <p class="full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p class="full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet praesentium harum voluptas. Eius non aspernatur incidunt exercitationem at error debitis neque minima fugit consequatur expedita blanditiis adipisci vitae, temporibus ipsum.</p>
+    </div>
+</body>
+</html>

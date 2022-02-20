@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Css Shape</title>
+    <style>
+        .square{
+            width: 50px;
+            height: 50px;
+            border: 1px solid aqua;
+            display: inline-block;
+        }
+        .square-rounded{
+            border-radius: 10px;
+        }
+        .rect{
+            width: 150px;
+            height: 50px;
+            border: 1px solid blue;
+            display: inline-block;
+        }
+        .circle{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #482ff7;
+            border-radius: 50%;
+            background-color: #482ff7;
+            display: inline-block;
+        }
+        .img-circle{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #482ff7;
+            border-radius: 50%;
+            display: inline-block;
+            background-size: cover;
+        }
+        .bg-img{
+            background-size: cover;
+            background-image: url(https://bit.ly/3GWJVUg);
+        }
+        .triangle{
+            display: inline-block;
+            border: 50px solid #fff;
+            border-bottom-color: #482ff7;
+            /* border-top-width: 0; */
+        }
+        .triangle-2{
+            border-right-color: #482ff7;
+        }
+        .triangle-3{
+            border-left-color: #482ff7;
+        }
+        .triangle-4{
+            border: 50px solid rgb(229, 229, 231);
+            display: inline-block;
+            border-top-color: aqua;
+            border-bottom-width: 15px;
+            border-radius: 5px;
+        }
+
+        .arr{
+            width: 150px;
+            height: 50px;
+            background-color: #482ff7;
+            position: relative;
+            margin-left: 50px;
+        }
+        .arr::after{
+            content: "";
+            border: 25px solid #482ff7;
+            border-left-color: #fff;
+            border-right-width: 0;
+            position: absolute;
+            right: 150px;
+        }
+        .arr::before{
+            content: "";
+            border: 25px solid #fff;
+            border-left-color: #482ff7;
+            border-right-width: 0;
+            position: absolute;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML CSS Shape</h1>
+    <h3>Square</h3>
+    <div class="square"></div>
+    <div class="square square-rounded"></div>
+    <div class="rect"></div>
+
+    <hr/>
+
+    <h3>Circle</h3>
+    <div class="circle"></div>
+    <img src="./img/shin.jpg" alt="profile" class="img-circle">
+    <div class="circle bg-img"></div>
+
+    <hr/>
+
+    <h3>Triangle</h3>
+    <div class="triangle"></div>
+    <div class="triangle triangle-2"></div>
+    <div class="triangle triangle-3"></div>
+    <div class="triangle-4"></div>
+
+    <hr>
+
+    <h3>Home Work</h3>
+    <div class="arr"></div>
+</body>
+</html>
