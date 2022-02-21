@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Animation Particle Heart line</title>
+    <style>
+        .one{
+            width: 50px;
+            height: 50px;
+            background-color: darkslategrey;
+            border-radius: 50%;
+            border: 5px solid aqua;
+            border-color: chartreuse skyblue red;
+            animation: test 3.5s linear;
+            transform: translate(1100px,500px);
+        }
+
+        @keyframes test{
+            0%{
+                transform: translate(-200px,-500px) rotate(360deg);
+            }
+            20%{
+                transform: translate(300px,500px) rotate(720deg);
+            }
+            40%{
+                transform: translate(400px,250px) rotate(1080deg);
+            }
+            50%{
+                transform: translate(500px,500px) rotate(1440deg);
+            }
+            60%{
+                transform: translate(600px,350px) rotate(1800deg);
+            }
+            70%{
+                transform: translate(700px,500px) rotate(2160deg);
+            }
+            80%{
+                transform: translate(800px,450px) rotate(2520deg);
+            }
+            90%{
+                transform: translate(900px,500px) rotate(2880deg);
+            }
+            100%{
+                transform: translate(1100px,500px) rotate(3240deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+</body>
+</html>

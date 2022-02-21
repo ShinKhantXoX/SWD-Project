@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Animation Particle Part 1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .manu{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .container{
+            height: 100vh;
+            /* padding: 30px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content{
+            width: 400px;
+            margin: 0 30px;
+            word-break: break-all;
+        }
+        .one{
+            animation: toRight 1.5s ;
+        }
+
+        .content h2{
+            animation: toLeft 1.5s;
+            margin-bottom: 30px;
+        }
+        .content p{
+            animation: toLeft 2s;
+        }
+
+        #heart{
+            width: 100px;
+            position: fixed;
+            bottom: 80px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            animation: shake 0.3s infinite;
+        }
+        @keyframes toRight{
+            from{
+                transform: translateX(-550px);
+            }
+            to{
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes toLeft{
+            from{
+                transform: translateX(550px);
+            }
+            to{
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shake{
+            from{
+                transform: scale(1.2);
+            }
+            to{
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one">
+            <img src="./img/man-5.jpg" alt="" class="manu">
+        </div>
+        <div class="content">
+            <h2>Man United</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis eum voluptas sit nemo dignissimos, quae illo voluptatibus magnam expedita vitae! At architecto consequatur magni nulla eaque reprehenderit ducimus reiciendis!
+            </p>
+        </div>
+        <img src="./img/heart.png" alt="" id="heart">
+    </div>
+</body>
+</html>
