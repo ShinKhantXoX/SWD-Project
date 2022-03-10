@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Nav</title>
+    <link rel="stylesheet" href="./library/feather-icons-web/feather.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        body{
+            background-color: #f5f5f5;
+        }
+        .header-box{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            background:linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54));
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.30);
+            padding: 10px;
+            transition: 0.5s;
+        }
+        .header-box:hover{
+            box-shadow: 0 0 15px rgba(0,0,0,0.40);
+        }
+        .brand a{
+            color: #f4f4f4;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+        .mobile-menu-btn{
+            display: none;
+        }
+        .nav{
+            width: auto;
+        }
+        .nav-list{
+            display: flex;
+        }
+        .nav-list li{
+            padding: 0;
+            list-style-type: none;
+            margin-left: 10px;
+        }
+        
+        .nav-list li a{
+            transition: 0.4s;
+            text-decoration: none;
+        }
+        .nav-item{
+            color: #f4f4f4;
+            position: relative;
+            transition: 0.5s;
+        }
+        .nav-item::after{
+            content: '';
+            width: 0;
+            height: 1px;
+            position: absolute;
+            background-color: #f4f4f4;
+            left: 50%;
+            bottom: 0;
+            transition: 0.4s;
+        }
+        .nav-item:hover::after{
+            width: 100%;
+            left: 0;
+        }
+        
+
+        @media screen and (max-width: 480px) {
+            .header-box{
+                width: 100%;
+                height: 50px;
+                flex-wrap: wrap;
+                background:linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54));
+                margin: 0 auto;
+                padding: 10px 0;
+                border-radius: 0;
+            }
+            .brand{
+                margin-left: 10px;
+            }
+            .brand a{
+                color: #f4f4f4;
+                font-weight: bolder;
+                margin-bottom: 10px;
+            }
+            
+            .mobile-menu-btn{
+                width: 30px;
+                height: 30px;
+                display: block;
+                background-color: #f4f4f4;
+                border: none;
+                border-radius: 10px;
+                margin-right: 10px;
+            }
+            .nav{
+                width: 100%;
+                display: none;
+            }
+            .nav-list{
+                width: 100%;
+                display: inline-block;
+            }
+            .nav-list .nav-item{
+                width: 100%;
+                color: #f4f4f4;
+                position: relative;
+                margin-bottom: 10px;
+            }
+            .nav-list li{
+                padding: 7px 0;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-right: 10px;
+                text-align: center;
+                background:linear-gradient(to right, rgb(195, 20, 50), rgb(36, 11, 54));
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.20);
+            }
+            .nav-list li:hover{
+                box-shadow: 0 0 15px rgba(0,0,0,0.30);
+            }
+            .nav-list li:first-child{
+                margin-top: 10px;
+            }
+            .nav-item{
+                width: 100%;
+                position: relative;
+                padding: 5px;
+            }
+            
+        }
+
+        .show-nav{
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: #e2f3f5;
+            animation: showSlow 0.5s alternate;
+            margin-top: 10px;
+            z-index: -1;
+        }
+
+        @keyframes showSlow{
+            0%{
+                transform: translateY(-100px);
+
+            }
+            100%{
+                transform: translateY(0%);
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    
+        <header class="header-box">
+            <div class="brand">
+                <a href="#">SXIN</a>
+            </div>
+
+                <button class="mobile-menu-btn" onclick="navControl()" >
+                    <i class="feather-menu" style="color: #ff304f;font-size: 18px;display: block;" onclick="changeIcon(this)"></i>
+                </button>
+        
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li>
+                        <a href="#" class="nav-item">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">About</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">Services</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+
+    <script>
+        let nav = document.querySelector("nav");
+        let mobileBtn = document.getElementsByClassName("mobile-menu-btn")[0];
+        let menu = document.getElementsByClassName("feather-menu")[0];
+        let xicon = document.createElement("i");
+
+        //type one
+        // document.getElementsByClassName("mobile-menu-btn")[0].onclick = function(){
+        //     nav.classList.toggle("show-nav");
+        // }
+
+        //type two
+        function navControl(){
+            nav.classList.toggle("show-nav");
+        }
+
+        changeIcon = (icon) => icon.classList.toggle(`feather-x`)
+        
+    </script>
+
+</body>
+</html>

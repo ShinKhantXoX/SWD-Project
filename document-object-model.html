@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+   <button id="click" onclick="run()">Click Me!</button>
+    <p id="two">Hello World</p>
+    <p class="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, fugit eius voluptatum atque esse praesentium suscipit inventore. Enim voluptas temporibus, non, ipsum quos harum ut pariatur reprehenderit quisquam eaque perspiciatis?</p>
+
+    <script>
+        // function run(){
+        //     alert("This is Run")
+        // }
+
+        // Css property
+        // document.querySelector("#click").onclick = function(){
+        //     alert("This is Property")
+        // }
+
+        //Method
+        // document.getElementById("click").addEventListener("click",function(){
+        //     alert("This is Method")
+        // })
+        
+        //Old Knowledge
+        // document.getElementsByTagName("body")[0].innerHTML = "<h1>This is h1</h1>"
+
+        //Node
+        let body = document.body;
+        let para = document.createElement("p");//<p></p>
+        let t = document.createTextNode("This is Node");//Text create
+        para.appendChild(t);//Text node put in p
+        body.appendChild(para);//para append on body
+
+        //insertBefore
+        let two = document.getElementById("two");
+        body.insertBefore(para,two);
+
+        //remove
+        // body.removeChild(two);
+
+
+    </script>
+</body>
+</html>

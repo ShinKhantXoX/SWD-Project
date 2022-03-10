@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        h4{
+            text-align: center;
+        }
+        .todo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #input{
+            height: 25px;
+            padding: 5px;
+            border: none;
+            border-radius: 15px;
+            background-color: #f4f4f4;
+        }
+        #addBtn{
+            height: 30px;
+            border-radius: 15px;
+            background-color: darkblue;
+            color: #f4f4f4;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .items{
+            width: 300px;
+            height: 400px;
+            border-radius: 15px;
+            background-color: #f4f4f4;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        }
+        .list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h4>To Do List</h4>
+    <div class="todo">
+        <div class="add-box" id="addBox">
+            <input type="text" id="input" autocomplete="off">
+            <button id="addBtn" class="btn btn-add" onclick="addList()">Add</button>
+        </div>
+    </div>
+    <br>
+        <div class="box">
+            <div class="items">
+                <ul class="list" id="list">
+            
+                </ul>
+        </div>
+        </div>
+
+    <script>
+    let minTextLength = 3;
+    let i = 1;
+
+    let input = document.getElementById("input");
+    let list = document.getElementById("list");
+
+    function textFilter(x){
+        if(x){
+            
+            if(x.length >= minTextLength){
+
+                return x;
+
+            }else{
+                alert("Min Text Length is 3");
+                return false;
+            }
+
+        }else{
+            alert("Input Text Empty");
+            return false;
+        }
+    }
+
+    function showListBackUp(text){
+        list.innerHTML += `
+            <li class="list-item" id="list${i}">
+                <button class="btn del-btn" onclick='deleteList(${i})'>Delete</button>
+                <button class="btn edit-btn" onclick='editList(${i})'>Edit</button>
+                <span id="listText${i}">${text}</span>
+            </li>
+        `;
+        i++;
+    }
+
+    function showList(text){
+        let li = document.createElement("li");
+        let content = document.createTextNode(text);
+        li.appendChild(content);
+        li.classList = "animate__animated animate__fadeInDown";
+        list.appendChild(li);
+
+        let button = document.createElement("button");
+        let edit = document.createTextNode("Edit");
+        button.appendChild(edit);
+        button.onclick = `editList${i}`;
+        button.classList = "animate__animated animate__fadeInDown";
+        list.appendChild(button);
+
+        let button1 = document.createElement("button");
+        let del = document.createTextNode("Delete");
+        button1.appendChild(del);
+        button1.onclick = `deleteList${i}`;
+        button1.classList = "animate__animated animate__fadeInDown";
+        list.appendChild(button1);
+    }
+
+    function deleteList(listId){
+
+        let current = document.getElementById(`list${listId}`);
+        let currentText = document.getElementById(`listText${listId}`).innerHTML;
+        let deleteConfirm = confirm(`Are U Sure To Delete List`);
+
+        if(deleteConfirm){
+            list.removeChild(current);
+        }else{
+            console.log("Delete Cancel");
+        }
+    }
+
+    function editList(listId){
+        let current = document.getElementById(`listText${listId}`);
+        let newText = prompt(`Say Something${current.value}`);
+
+        if(textFilter(newText)){
+            current.innerHTML = newText;
+        }
+    
+    }
+    
+    
+
+    function addList() {
+        //get
+        let inputText = textFilter(input.value);
+
+        if(inputText){
+            //set
+            showList(inputText);
+            input.value = "";
+        }
+    }
+
+    input.addEventListener("keyup",function (e) {
+        if(e.keyCode == 13){
+            addList();
+        }
+    })
+
+    
+    </script>
+
+    
+</body>
+</html>
