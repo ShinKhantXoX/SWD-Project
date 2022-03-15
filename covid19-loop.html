@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid 19 Loop</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        tr,td{
+            padding: 10px 15px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h4>Global Covid 19 Table</h4>
+    <table>
+        <tbody id="tb">
+            
+        </tbody>
+    </table>
+
+    <h4>Country Covid 19 Table</h4>
+    <table>
+        <thead>
+            <tr>
+                <td>No</td>
+                <td>Country</td>
+                <td>CountryCode</td>
+                <td>Date</td>
+                <td>NewConfirmed</td>
+                <td>NewDeaths</td>
+                <td>TotalConfirmed</td>
+                <td>TotalDeaths</td>
+            </tr>
+        </thead>
+        <tbody id="ctb">
+            
+        </tbody>
+    </table>
+    
+
+    <script src="./JavaScript/covid19.js"></script>
+    <script>
+        let global = data.Global;
+        let country = data.Countries;
+        let tb = document.getElementById("tb");
+        let ctb = document.getElementById("ctb");
+        let i = 1;
+        
+        for(x in global){
+            tb.innerHTML +=`
+            <tr>
+                <td>${x}</td>
+                <td>${global[x]}</td>
+            </tr>
+            `;
+        }
+
+        console.log(country[0])
+
+        for(x of country){
+            
+            ctb.innerHTML +=`
+            <tr>
+                <td>${i}</td>
+                <td>${x.Country}</td>
+                <td>${x.CountryCode}</td>
+                <td>${x.Date}</td>
+                <td>${x.NewConfirmed}</td>
+                <td>${x.NewDeaths}</td>
+                <td>${x.TotalConfirmed}</td>
+                <td>${x.TotalDeaths}</td>
+            </tr>
+            `;
+            i++;
+        }
+
+        
+    </script>
+</body>
+</html>
