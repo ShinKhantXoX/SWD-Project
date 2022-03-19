@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Class</title>
+</head>
+<body>
+    
+    <script>
+        let myObj = {
+            name:"Mg Mg",
+            age:19,
+            introduction:function(){
+                return `My name is ${this.name} and I am ${this.age} years old.`;
+            }
+        }
+
+        //class expression
+        class Me{
+
+            name = "Mg Mg";
+            age = 15;
+            //access modifier
+            #gf = "Poe";
+
+            //custom method 
+            showGf(){
+                return `${this.#gf} is my Girlfriend.`;
+            }
+            introduction(){
+                return `My name is ${this.name} and I am ${this.age} years old.`;
+            }
+
+        }
+
+        let me = new Me; //class to Object
+
+        //constructor
+        class Reg{
+            //magic method
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+                console.log("This is constructor")
+            }
+
+            //prototype method
+            get showBdy(){
+                let currentYear = new Date().getFullYear();//Dynamic method
+                return currentYear-this.age;
+            }
+
+            //static method Reg.Test()လို့တန်းခေါ်လို့ရတယ် instance ဆောက်စရာမလိုဘူး
+            static Test(){
+                return `This is static method`;
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

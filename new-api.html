@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Api Test</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h2{
+            text-align: center;
+            color: rgba(18,18,190);
+        }
+        .news{
+            width: 80%;
+            margin: 100px auto;
+            columns: 3 250px;
+        }
+        .card{
+            width: 100%;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.18);
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .card-img{
+            width: 100%;
+        }
+        .title{
+            color: rgb(18, 18, 190);
+            font-weight: bolder;
+        }
+        .author{
+
+        }
+        .description{
+            color: #929090;
+        }
+        .btn{
+            width: 80px;
+            height: 30px;
+            background: rgb(28, 28, 218);
+            border-radius: 20px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn a{
+            text-decoration: none;
+            color: #f4f4f4;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h2>New Api</h2>
+    
+    <div class="news">
+        <div class="card">
+            <img src="" alt="" class="card-img">
+            <h4 class="title"></h4>
+            <div class="author"></div>
+            <div class="description"></div>
+            <div class="btn">
+                <a href="">See More</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./JavaScript/new.js"></script>
+    <script>
+        let article = data.articles;
+        let card = document.querySelector('.news');
+        console.log(article[0]);
+        article.map(function(el,index){
+            card.innerHTML += `
+            <div class="card">
+                <img src="${el.urlToImage}" alt="" class="card-img">
+                <h4 class="title">${el.title}</h4>
+                <div class="author">${el.author}</div>
+                <div class="description">${el.description}</div>
+                <div class="btn">
+                    <a href="${el.url}">See More</a>
+                </div>
+            </div>
+            `;
+        })
+
+
+    </script>
+</body>
+</html>

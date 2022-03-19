@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Popular Array Methods</title>
+</head>
+<body>
+    <h3>Most Popular Array Methods</h3>
+    <ul>
+        <li>map[loop] ပတ်</li>
+        <li>filter[စစ်ထုတ်]</li>
+        <li>reduce[စုစုပေါင်း]</li>
+    </ul>
+
+    <div>// array copy ပွား</div>
+    <div>// array ပုံစံပြောင်း</div>
+    <div>// array အခန်းများဖြတ်ထုတ် reduce()</div>
+    <div>// arrow function ဖြင့်လဲသုံးလို့ရ</div>
+    <div>//array မှ data ဖြတ်ထုတ်</div>
+    <div>// methods တေချိတ်သုံး</div>
+    <div>// array ထဲမှအချက်အလက်တေပေါင်းထုတ်</div>
+
+    <script>
+        let fruits = ["Banana","Orange","Apple","Mango","Lemon"];
+        let num = [15,13,-5,78,13.5,24,24.6];
+        let arrData = [
+            {id:0,name:"Mg Mg",mobile:099578469,roam:"a",donate:300},
+            {id:1,name:"Su Pyae",mobile:097785698,roam:"b",donate:500},
+            {id:2,name:"Zaw Zaw",mobile:0945448978,roam:"c",donate:200},
+            {id:3,name:"Aye Aye",mobile:0998567898,roam:"d",donate:250},
+            {id:4,name:"Moe Moe",mobile:0978695898,roam:"a",donate:150}
+        ];
+
+        let arr = fruits.map(function (el,index){
+            console.log(index+" - "+el+"aaa")
+        });
+
+        let numCalc = num.reduce((x,y) => x+y);
+            console.log(numCalc);
+
+        let reduce = arrData.reduce((x,y) =>x+y.donate,0);//Obj ထဲကဆိုရင် ဘယ်ကစမလဲဆိုတဲ့ index number ထည့်ပေးရတယ်
+            console.log(reduce);
+        
+        let data = arrData.filter(el=>el.roam === "a").map(el=>el.donate).reduce((x,y) => x+y)
+            console.log(data)
+
+    </script>
+</body>
+</html>

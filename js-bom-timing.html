@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js BOM Timing</title>
+</head>
+<body>
+    <h4>ချိန်ကိုက်ဗုံး</h4>
+    <ul>
+        <li>setTimeout(function,milliseconds)</li>
+        <li>clearTimeout(function)</li>
+    </ul>
+    <br>
+    <h4>အချိန်မှန်</h4>
+    <ul>
+        <li>setInterval(function,milliseconds)</li>
+        <li>clearInterval(function)</li>
+    </ul>
+
+    <div class="clock-box">
+        <div class="clock" id="clock"></div>
+        <button id="run">Run</button>
+        <button id="stop">Stop</button>
+    </div>
+
+
+    <script>
+        let clock = document.getElementById("clock");
+        let run = document.getElementById("run");
+        
+       function showTime(){
+            let d = new Date();
+            clock.innerHTML = `${d.getHours()} : ${d.getMinutes()} : ${d.getSeconds()}`;
+       }
+       run.addEventListener("click",function(){
+            setInterval(showTime,1000)
+       })
+       let s = setInterval(showTime,1000); 
+
+      document.getElementById("stop").addEventListener('click',()=>{
+          clearInterval(s)
+      })
+
+    </script>
+</body>
+</html>
