@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch Finally Throw</title>
+</head>
+<body>
+    <script>
+        let x = {name:"Mg Mg",age:19,job:null};
+
+        try{
+            console.log("code start");
+            if(x.job){
+                console.log(x);
+            }else{
+                throw new SyntaxError("no job");//error မဖြစ်ဖြစ်အောင်ဖန်တီးတာ
+            }
+            // aa();
+            console.log("code end");
+
+        }catch(err){
+            console.error(err.message)
+        }finally{
+            console.log("this is finally");//error တက်တက်မတက်တက်အလုပ်လုပ်တယ်
+        }
+    </script>
+</body>
+</html>

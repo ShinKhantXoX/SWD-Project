@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+        let arr1 = ["x","y","z"];
+        let arr2 = [1,2,3];
+
+        let obj = {name:"Kyaw Kyaw"}
+        let age = {age:19};
+
+        let math = [0, 150, 30, 20, 38];
+        let m = Math.max(...math);
+        console.log(m);
+
+        // let arr = arr1.concat(arr2);
+        let arr = ["start",...arr1,"mid",...arr2,"end"];
+        console.log(arr);
+
+        let a = {...obj,"status":false,...age}
+        console.log(a);
+    </script>
+</body>
+</html>

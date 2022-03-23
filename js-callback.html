@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function aa(){
+            console.log('this is aa');
+
+            function aaa(){
+                console.log('this is aaa')
+            }
+            aaa();
+        }
+
+        function bb(x,y){
+            let result = x*y;
+
+            function bbb(z){
+                console.log('this is final result '+z)
+            }
+            bbb(result);
+        }
+
+        function cc(x){
+            let input = "this is input"+x;
+
+            return function(){
+                console.log(input)
+            }
+        }
+
+        //call back function
+        function dd(x,y,callback){
+            let z = x+y;
+            callback(z);
+        }
+
+        function ff(x){
+            console.log('this is final result '+x)
+        }
+        dd(2,5,ff);
+
+        //alert callback
+        function getting(x){
+            alert('this is your name - '+x)
+        }
+
+        function userinput(callback){
+            let name = prompt('Pls fail your name ');
+            callback(name);
+        }
+        userinput(getting);
+    </script>
+</body>
+</html>

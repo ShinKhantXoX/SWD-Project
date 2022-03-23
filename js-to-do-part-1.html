@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js To Do</title>
+    <style>
+        input{
+            margin-top: 300px;
+            margin-left: 550px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: none;
+            border-radius: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        input:focus{
+            outline-style: none;
+        }
+        #list{
+            margin-left: 550px;
+            list-style: none;
+        }
+        li{
+            margin-top: 20px;
+        }
+        button{
+            height: 30px;
+            color: #f4f4f4;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            background-color: aqua;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+        button:active{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text" autocomplete="off">
+    <br>
+    <ul id="list"></ul>
+    
+    
+
+    <script>
+        let text = document.getElementById("text");
+        let input = text.value;
+        let list = document.getElementById("list");
+        let id = 1;
+        let k = Object.keys(localStorage);
+        k.sort();
+        if(localStorage.length>0){
+            id = Number(k[k.length-1])+1;
+        }
+
+        function save(x){
+            localStorage.setItem(id,x);
+            id++;
+        }
+
+        function addText(x,y){
+            let li = document.createElement("li");
+            let node = document.createTextNode(" - "+x+" - ");
+            let btn = document.createElement("button");
+            let edit = document.createElement("button");
+            let Edit = document.createTextNode("Edit");
+            let btnText = document.createTextNode("Delete");
+            btn.appendChild(btnText);
+            edit.appendChild(Edit);
+            btn.setAttribute("onclick","del("+y+")");
+            edit.setAttribute("onclick","edi("+y+")")
+            li.appendChild(btn);
+            li.appendChild(node);
+            li.appendChild(edit);
+            li.setAttribute("id","list-"+y);
+            list.appendChild(li);
+            
+        }
+
+        function del(x){
+            // console.log(x);
+            localStorage.removeItem(x);
+            let current = document.getElementById("list-"+x);
+            current.remove();
+        }
+
+        function edi(x){
+            console.log(x);
+            let favDrink = prompt("Pls Edit Something");
+            let current = document.getElementById("list-"+x);
+            current.innerHTML = `<button onclick="del(${x})">Delete</button> - ${favDrink} - <button onclick="edi(${x})">Edit</button>`;
+    
+        }
+
+        function showList(){
+            k.map(function(el){
+                addText(localStorage.getItem(el),el)
+            })
+        }
+
+        document.addEventListener("keyup",function(e){
+            if(e.keyCode ==13){
+                let input = text.value;
+                addText(input);
+                save(input);
+                console.log(input);
+                text.value = '';
+            }
+        })
+
+        showList();
+    </script>
+</body>
+</html>

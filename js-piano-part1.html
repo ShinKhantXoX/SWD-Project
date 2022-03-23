@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piano Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .show-key{
+            width: auto;
+            height: 50px;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding-left: 20px;
+            position: absolute;
+            top: 120px;
+            left: 482px;
+        }
+        .save-btn{
+            position: absolute;
+            top: 140px;
+            left: 700px;
+        }
+        .piano-box{
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+        .btn-piano{
+            width: 50px;
+            height: 300px;
+            border: 1px solid #f4f4f4;
+            border-right: 1px solid black;
+            line-height: 450px;
+        }
+        .btn-piano:active{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+        .C4::before{
+            content: '';
+            width: 25px;
+            height: 170px;
+            background-color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            top: 198px;
+            left: 470px;
+        }
+        .D4::before{
+            content: '';
+            width: 25px;
+            height: 170px;
+            background-color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            top: 198px;
+            left: 524px;
+        }
+        .F4::before{
+            content: '';
+            width: 25px;
+            height: 170px;
+            background-color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            top: 198px;
+            left: 632px;
+        }
+        .G4::before{
+            content: '';
+            width: 25px;
+            height: 170px;
+            background-color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            top: 198px;
+            left: 740px;
+        }
+        .B4::before{
+            content: '';
+            width: 25px;
+            height: 170px;
+            background-color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            top: 198px;
+            left: 794px;
+        }
+        .li{
+            width: auto;
+            height: 30px;
+            background-color: #f4f4f4;
+            list-style-type: none;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            position: absolute;
+            top: 600px;
+            left: 500px;
+        }
+    </style>
+<body>
+    
+<div class="box">
+        <input type="text" id="cords" class="show-key">
+        <button onclick="saveChord()" class="save-btn">Save</button>
+        <div class="piano-box">
+            <button onclick="run('C4')" class="btn-piano C4">C4</button>
+            <button onclick="run('D4')" class="btn-piano D4">D4</button>
+            <button onclick="run('E4')" class="btn-piano">E4</button>
+            <button onclick="run('F4')" class="btn-piano F4">F4</button>
+            <button onclick="run('G4')" class="btn-piano G4">G4</button>
+            <button onclick="run('A4')" class="btn-piano">A4</button>
+            <button onclick="run('B4')" class="btn-piano B4">B4</button>
+            <button onclick="run('C5')" class="btn-piano ">C5</button>
+        </div>
+
+
+    <ul id="list"></ul>
+
+</div>
+<script>
+
+    let cords = document.getElementById("cords");
+    let pianoMemory = [];
+    let list = document.getElementById("list");
+
+    function run(x){
+        const a =new Audio(`./js-audio/${x}.mp3`);
+        a.play();
+        cords.value += x+",";
+        console.log(`U play ${x} key`);
+    }
+
+    function saveChord(){
+        let input = cords.value;
+        pianoMemory.push(input);
+        console.log(`${input} is saved in memory`);
+        cords.value = "";
+        list.innerHTML = "";
+        pianoMemory.map(function (el,index) {
+            list.innerHTML += `<li class="li">${el} <button onclick="rePlay(${index})">Replay</button> </li>`;
+        })
+    }
+
+    let m = ["C4","E4","B4","C4","E4","B4","C4","E4","B4","C4","E4","B4","C4","E4","B4","C4","E4","B4"];
+
+    function runMemory(arr,delay=500){
+        let x = Number(delay);
+        arr.map(function (el,index) {
+            setTimeout(run,x,el);
+            x += delay;
+        });
+    }
+
+    function rePlay(x){
+        let current = pianoMemory[x].split(",");
+        current.pop();
+        runMemory(current);
+    }
+
+    document.addEventListener("keyup",function (e) {
+        console.log(e.keyCode);
+        let current = e.keyCode;
+        if(current == 65){
+            run('C4');
+        }else if(current == 83){
+            run('D4');
+        }else if(current == 68){
+            run("E4");
+        }else if(current == 70){
+            run("F4");
+        }else if(current == 74){
+            run("G4");
+        }else if(current == 75){
+            run("A4");
+        }
+        else if(current == 76){
+            run("B4");
+        }
+        else if(current == 186){
+            run("C5");
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
