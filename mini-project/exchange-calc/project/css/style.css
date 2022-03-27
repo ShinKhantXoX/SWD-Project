@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@font-face{
+    font-family: "mm";
+    font-weight: normal;
+    src:url("../fonts/MyanmarSagar.ttf");
+}
+@font-face{
+    font-family: "mm";
+    font-weight: bold;
+    src:url("../fonts/Pyidaungsu-1.8.3_Bold.ttf");
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+:root{
+    --primary:#62CADB;
+    --secondary:#707070;
+    --light:#ffffff;
+    --dark:#000000;
+}
+.app{
+    width: 700px;
+    margin: 100px auto;
+}
+.output{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-collection{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+}
+.brand{
+    font-size: 40px;
+    margin-left: 10px;
+    color: var(--secondary);
+}
+.result-container{
+    font-size: 40px;
+    color: var(--secondary);
+}
+.divider{
+    background-color: var(--secondary);
+    height: 4px;
+    margin-top: 20px;
+}
+
