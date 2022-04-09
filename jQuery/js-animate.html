@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+    <style>
+        .obj{
+            width: 100px;
+            height: 100px;
+            background-color: #62CADB;
+            margin-top: 20px;
+            position: relative;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <button class="aniBtn">Animate</button>
+    <button class="stop">Stop</button>
+    <button class="chain">Chain</button>
+    <div class="obj">Hello World</div>
+
+
+
+<script src="js/jquery.js"></script>
+    <script>
+        $(".aniBtn").click(function(){
+            var obj = $(".obj");
+                obj.animate({height:"300px",opacity:"0.4"},"slow");
+                obj.animate({width:"300px",opacity:"0.8"},"slow");
+                obj.animate({height:"100px",opacity:"0.4"},"slow");
+                obj.animate({width:"100px",opacity:"0.8"},"slow");
+                obj.animate({
+                    top:"100px",
+                    left:"50px"
+                },function(){
+                    console.log("Animation is finish")
+                })
+        });
+
+        $(".stop").click(function(){
+            $(".obj").stop();
+        });
+
+        $(".chain").click(function(){
+            $(".obj").css('color','red').hide(2000).show(1000);
+        });
+    </script>
+</body>
+</html>

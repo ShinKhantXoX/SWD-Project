@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove</title>
+</head>
+<body>
+    
+    
+    <ul name="" id="ul">
+        <li value="mm">Myanmar</li>
+        <li value="sg">Singapore</li>
+        <li value="indo">Indonesia</li>
+    </ul>
+   
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        //append + prepend parent level control
+        //append
+        $('#ul').append(`<li>Us</li>`)
+        
+        //prepend
+        $('#ul').prepend(`<li>One</li>`)
+
+        //before+after sibling level control
+        //before
+        $('#ul').before(`<p>This is Before</p>`)
+
+        //after
+        $('#ul').after(`<p>This is After</p>`)
+
+        //empty parent level control
+        $('#ul').empty()
+
+        //remove element level control
+        $('#ul').remove()
+
+
+    </script>
+</body>
+</html>
