@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Js</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="doughnut" width="400" height="400"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="polar" width="400" height="400"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./vendor/chart_js/Chart.min.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','Myanmar'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3,14],
+            backgroundColor: [
+                'rgba(40, 0, 192, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+            tension:0
+        },
+        {
+            label: '# of Votes',
+            data: [5, 15, 2, 7, 4, 5,17],
+            backgroundColor: [
+                'rgba(54, 160, 10, 0.2)'
+            ],
+            borderColor: [
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+            tension:0
+        }
+    ]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+const doug = document.getElementById('doughnut');
+const myDoug = new Chart(doug, {
+    type: 'doughnut',
+    data: {
+        labels: ['Light-Grey', 'Info', 'Dark-blue', 'Red', 'Yellow', 'Light-Blue'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                '#f0f0f0',
+                '#43dde6',
+                '#364f6b',
+                '#fc5185',
+                '#f4fa9c',
+                '#88bef5'
+            ],
+            borderColor: [
+                '#cabbe9',
+                '#ffcef3',
+                '#fdfdfd',
+                '#feff89',
+                '#f85959',
+                '#ff304f'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+const polar = document.getElementById('polar');
+const myPolar = new Chart(polar, {
+    type: 'polarArea',
+    data: {
+        labels: ['Light-Grey', 'Info', 'Dark-blue', 'Red', 'Yellow', 'Light-Blue'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                '#f0f0f0',
+                '#43dde6',
+                '#364f6b',
+                '#fc5185',
+                '#f4fa9c',
+                '#88bef5'
+            ],
+            borderColor: [
+                '#cabbe9',
+                '#ffcef3',
+                '#fdfdfd',
+                '#feff89',
+                '#f85959',
+                '#ff304f'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+    </script>
+</body>
+</html>

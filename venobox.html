@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venobox Js</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/venobox/venobox.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row my-4 p-4">
+            <div class="col-3 mb-3">
+                <a class="venobox" data-gall="myGallery" data-maxwidth="600px"  href="./img/man-6.jpg">
+                    <img src="./img/man-6.jpg" class="img-fluid" alt="image alt"/>
+                </a>
+            </div>
+            <div class="col-3 mb-3">
+                <a class="venobox" data-gall="myGallery" data-maxwidth="600px" href="./img/man-5.jpg">
+                    <img src="./img/man-5.jpg" class="img-fluid" alt="image alt"/>
+                </a>
+            </div>
+            <div class="col-3 mb-3">
+                <a class="venobox" data-gall="myGallery" data-maxwidth="600px" href="./img/man-7.jpg">
+                    <img src="./img/man-7.jpg" class="img-fluid" alt="image alt"/>
+                </a>
+            </div>
+            <div class="col-3">
+                <a class="venobox" data-gall="myGallery" data-maxwidth="600px" href="./img/man-4.jpg">
+                    <img src="./img/man-4.jpg" class="img-fluid" alt="image alt"/>
+                </a>
+            </div>
+            <div class="col-3">
+                <a class="venobox" data-gall="myGallery" data-maxwidth="600px" href="./img/man-2.jpg">
+                    <img src="./img/man-2.jpg" class="img-fluid" alt="image alt"/>
+                </a>
+            </div>
+            <div class="col-3">
+                <a class="venobox" data-gall="myGallery" data-maxwidth="600px" href="./img/man-1.jpg">
+                    <img src="./img/man-1.jpg" class="img-fluid" alt="image alt"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./jQuery/js/jquery.js"></script>
+    <script src="./vendor/venobox/venobox.esm.js"></script>
+    <script>
+        // Initialize venobox as a variable
+        var venobox = new VenoBox();
+
+        venobox.open(); // Open specific item
+        venobox.close();          // Close the modal window
+        venobox.next();           // Navigate the next gallery item
+        venobox.prev();           // Navigate the previous gallery item
+
+        
+    </script>
+</body>
+</html>
