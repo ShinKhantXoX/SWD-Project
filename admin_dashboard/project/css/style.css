@@ -19,8 +19,135 @@
     z-index: 2000;
 }
 
+.brand-logo{
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-light);
+    z-index: 2006;
+}
+
 .sidebar{
 
+}
+.sidebar{
+    height: 100vh;
+    overflow-y: scroll;
+}
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+.sidebar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #bebebe; 
+    border-radius: 10px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: #e0e0e0; 
+    border-radius: 10px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--grey); 
+}
+
+.dash:hover{
+    background-color: #e0e0e0;
+    border-radius: 0.25rem;
+}
+
+.sidebar-title{
+    text-transform: uppercase;
+    color: #bebebe;
+    font-weight: bold;
+    padding: 10px 0;
+    margin: 0;
+}
+.side-menu .sidebar-item{
+    padding: 10px;
+    margin-top: 5px;
+}
+.sidebar-item{
+    transition: 0.5s;
+}
+.sidebar-item:hover{
+    color: black !important;
+    background-color: #e0e0e0;
+    border-radius: 0.25rem;
+}
+
+.side-icon-box i{
+    margin-right: 5px;
+}
+
+.sidebar-item a{
+    color: var(--dark);
+}
+.spacer{
+    padding: 10px;
+}
+.activeCustom{
+    color: #fff !important;
+    background-color: var(--bs-primary);
+    border-radius: 0.25rem;
+    padding: 10px !important;
+}
+.activeCustom a{
+    color: #fff !important;
+}
+
+.activeCustom a i{
+    color: #fff !important;
+}
+.card{
+    border-radius: none;
+}
+
+.static-card{
+    transition: 0.5s;
+}
+
+.static-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.static-card:active{
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.breadcrumb li a{
+    text-decoration: none;
+}
+
+.ov-img{
+    margin-left: -25px;
+}
+
+.item-carousel{
+    margin-top: -100px;
+}
+.item-img{
+    width: 150px;
+    height: auto;
+}
+.stick{
+    height: 200px;
+}
+
+.sub-list tr{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sub-list tr:active{
+    transform: scale(1.02);
+}
+
+.full-screen-btn{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2005;
 }
 @media screen and (max-width: 780px){
     .sidebar{
@@ -30,6 +157,12 @@
         display: block !important;
         z-index: 2001;
         margin-left: -100%;
+    }
+    .item-carousel-card{
+        margin-top: 100px;
+    }
+    .op-margin{
+        margin-bottom: 20px;
     }
 }
 
