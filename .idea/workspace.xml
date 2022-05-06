@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c094deb-5586-47b1-8d39-016fd597e1e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_dashboard/project/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dashboard/project/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_dashboard/project/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dashboard/project/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_dashboard/project/item_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dashboard/project/item_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin_dashboard/project/item_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dashboard/project/item_list.html" afterDir="false" />
-    </list>
+    <list default="true" id="0c094deb-5586-47b1-8d39-016fd597e1e2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../profile-website" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -54,6 +48,7 @@
       <workItem from="1650779104815" duration="73000" />
       <workItem from="1650779198449" duration="2355000" />
       <workItem from="1650787071705" duration="1592000" />
+      <workItem from="1651143114346" duration="78000" />
     </task>
     <servers />
   </component>
